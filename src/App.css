@@ -1,16 +1,14 @@
+body{
+  background: black;
+}
 .App {
   background-color: rgb(0, 0, 0);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   color: #f7f9ff;
-}
-
-.appcontainer {
-  width: 100%;
-  height: 100%;
 }
 /* HEADER  */
 .title-image-box {
@@ -27,41 +25,97 @@
   object-fit: scale-down;
 }
 /* TOON SELECTION*/
-.character-selection{
+.character-selection {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
-.campfire-image{
+.campfire-image {
+  /* border: 1px solid white; */
   width: 542px;
   height: 330px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  background: url(./media/campfire.png)
+  background: url(./media/campfire.png);
+  margin-bottom: 0;
 }
-.selection-box{
+.selection-box {
   /* border: 1px solid white; */
   height: 100%;
 }
-.amazon-box{
-  width: 89px
+.amazon-box {
+  width: 89px;
 }
-.assassin-box{
+.assassin-box {
   width: 61px;
 }
-.necro-box{
+.necro-box {
   width: 74px;
 }
-.barb-box{
+.barb-box {
   width: 86px;
 }
-.sorc-box{
+.sorc-box {
   width: 73px;
 }
-.druid-box{
+.druid-box {
   width: 67px;
 }
-.pal-box{
+.pal-box {
   width: 84px;
+}
+#toon-text{
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Armory */
+.armory-box{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.panel{
+  width: 40%;
+  /* background: gray; */
+  height: 600px;
+  border: 1px solid white;
+}
+.left-armory{
+
+}
+.right-armory{
+
+}
+.weapon-select{
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.weapon-select select{
+  width: 40%
+}
+.weapon-image-div{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general */
+.hidden{
+  display: none;
 }

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
-import campfireimg from '../media/campfire.png'
-import { DataContext } from '../Contexts'
+import { UserContext } from '../Contexts'
 
 function ToonSelection() {
-    const context = useContext(DataContext)
+    const user = useContext(UserContext)
     const handleToonClick = name =>{
-        context.setToon(name)
+        user.setToon(name)
     }
     return (
         <div className="character-selection">
@@ -18,8 +17,7 @@ function ToonSelection() {
                 <div className="druid-box selection-box" onClick={()=>handleToonClick('Druid')}></div>
                 <div className="pal-box selection-box" onClick={()=>handleToonClick('Paladin')}></div>
             </div>
-            {/* <img src={campfireimg} alt="character selection" className="campfire" /> */}
-            <p>{context.toon ? `[ ${context.toon} ]` : '[ Click a character to select your class ]'}</p>
+            <p id='toon-text'>{user.toon ? `[ ${user.toon} ]` : '[ Click a character to select your class ]'}</p>
         </div>
     )
 }

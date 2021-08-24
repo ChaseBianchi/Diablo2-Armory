@@ -1,9 +1,9 @@
 import React, { useState, createContext } from 'react';
 
-export const DataContext = createContext(
+export const UserContext = createContext(
     {
         toon: '',
-        weapon: {name: '', mods: []},
+        weapon: {iLevel: 0, name: '', quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
         setToon: ()=>{},
         setWeapon: ()=>{},
         resetAll: ()=>{},
@@ -11,24 +11,24 @@ export const DataContext = createContext(
     }
 );
 
-export const DataContextProvider = props =>{
-    
-    const setToon = toon => {
-        setState({...state, toon: toon})
-    }
-    const setWeapon = weapon =>{
-        setState({...state, weapon: weapon})
-    }
-    function resetAll(){
-        setState({initState})
-    }
+export const UserContextProvider = props =>{
     const initState = {
         toon: '',
-        weapon: {name: '', mods: []},
-        setToon: setToon,
-        setWeapon: setWeapon,
-        resetAll: resetAll,
+        weapon: {iLevel: 0, name: '', quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
     }
-    const [state, setState] = useState(initState)
-    return <DataContext.Provider value={state} >{props.children}</DataContext.Provider>
+    const [userState, setUserState] = useState(initState)
+    function setToon(toon){
+        const newState = {...userState, toon: toon}
+        setUserState(newState)
+    }
+    function setWeapon(weapon){
+        const newState = {...userState, weapon: {...userState.weapon, ...weapon}}
+        setUserState(newState)
+    }
+    function resetUser(){
+        setUserState({initState})
+    }
+    
+    
+    return <UserContext.Provider value={{...userState, setWeapon, setToon, resetUser}} >{props.children}</UserContext.Provider>
 }
