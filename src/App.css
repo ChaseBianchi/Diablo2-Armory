@@ -78,28 +78,77 @@ body{
   justify-content: space-evenly;
 }
 .panel{
-  width: 40%;
-  /* background: gray; */
+  width: 30%;
   height: 600px;
-  border: 1px solid white;
+  border: 2px double rgb(126, 126, 126);
+  border-right: 2px double rgb(44, 44, 44);
+  border-bottom: 2px double rgb(87, 87, 87);
+  background-image: url(./media/bigpanel.png);
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 .left-armory{
 
 }
-.right-armory{
+.mid-armory{
 
+}
+.damage-box{
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: center;
+}
+.left-damage{
+  text-align: right;
+  padding: 0 10px 0 10px;
+}
+.right-damage{
+  text-align: left
+}
+.dmg-type{
+  margin: 0;
+}
+.phys{
+  color:rgb(254, 255, 211)
+}
+.fire{
+  color: rgb(255, 139, 139);
+}
+.light{
+  color: rgb(255, 255, 107);
+}
+.cold{
+  color: rgb(111, 111, 255);
+}
+.poison{
+  color: rgb(153, 255, 153);
+}
+.right-armory{
 }
 .weapon-select{
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  padding: 10px 0 0 0;
 }
 .weapon-select select{
   width: 40%
 }
 .weapon-image-div{
-
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 150px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.weapon-image{
+  width: 100%;
 }
 
 
@@ -117,5 +166,6 @@ body{
 
 /* general */
 .hidden{
+  opacity: 0;
   display: none;
 }
