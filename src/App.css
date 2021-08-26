@@ -76,7 +76,34 @@ body{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+
 }
+.mod-select{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.mod{
+  width: 200px;
+  height: 40px;
+  border: 2px double rgb(126, 126, 126);
+  margin: 0 0px 20px 0px;
+  display: flex;  
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(44, 44, 44);
+  color: white;
+}
+.mod:hover{
+  background-color: rgb(70, 70, 70);
+}
+.curr-mod{
+  background-color: rgb(87, 87, 87);
+}
+
 .panel{
   width: 30%;
   height: 600px;
@@ -89,9 +116,10 @@ body{
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  transition: opacity 1s ease-in-out;
 }
 .left-armory{
-
+  
 }
 .dropdown-weapon-stats{
   width: 50%;
@@ -124,12 +152,31 @@ body{
   margin: 5px 0;
 }
 .left-stat-box{
+  /* border: 1px solid red; */
   width: 34%;
-  text-align: right;
   padding-right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.cancel-btn{
+  font-size: .8rem;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  border: 1px double rgb(182, 182, 182);
+  color: rgb(97, 49, 49);
+  border-radius: 50%;
+  background:rgb(184, 113, 113);
+  margin-right: 8px
 }
 .stat-input{
-  width: 50px;
+  width: 40px;
+  text-align: center;
 }
 
 .right-damage{

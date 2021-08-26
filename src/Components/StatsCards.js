@@ -9,24 +9,32 @@ function StatsCards(props) {
     const statIndex = weapon.stats.findIndex(obj=> obj.name===stat.name)
     const onChange= e =>{
         const re = /^[0-9]+$/;
-        if (re.test(e.target.value)) {
+        if (e.target.value==='' || re.test(e.target.value)) {
             const newStats = [...weapon.stats]
             newStats[statIndex].value = e.target.value
             setWeapon({...weapon, stats: [...newStats]})
         }
     }
+    const handleCancelStat = ()=>{
+        const newStats = [...weapon.stats]
+        newStats.splice(statIndex, 1)
+        setWeapon({...weapon, stats: [...newStats]})
+    }
     return (
         <div className='stats-card-container'>
             <div className="left-stat-box">
-            <input
+                <button  
+                onClick={handleCancelStat}
+                className='cancel-btn'
+                >x</button>
+                <input
                 className='stat-input'
                 name={stat.name} 
                 type='text'
-                placeholder='100'
+                placeholder='#'
                 value={weapon.stats[weapon.stats.findIndex(obj=> obj.name===stat.name)].value}   
                 onChange={onChange} 
                 />
-            
             </div>
             <div className="right-stat-box">
             {stat.name}

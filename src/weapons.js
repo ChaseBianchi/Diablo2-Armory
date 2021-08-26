@@ -1,6 +1,6 @@
 export const weapons = [{value: 'Tulwar', label: 'Tulwar'}, {value: 'Berserker Axe', label: 'Berserker Axe'}]
 
-export const stats = [{value: 'Enhanced Damage', label: 'Enhanced Damage'},{value: 'Strength', label: 'Strength'},{value: 'Dexterity', label: 'Dexterity'},{value: 'Maximum Damage', label: 'Maximum Damage'}, {value: 'Fire Damage', label: 'Fire Damage'}]
+export const stats = [{value: 'Enhanced Damage', label: 'Enhanced Damage'},{value: 'Minimum Damage', label: 'Minimum Damage'},{value: 'Maximum Damage', label: 'Maximum Damage'}, {value: 'Fire Damage', label: 'Fire Damage'}, {value: 'Dexterity', label: 'Dexterity'},]
 
 export const weaponTable = {'Berserker Axe': {min: '24', max: '71', avg: '47.5'}, 'Tulwar': {min: '16', max: '35', avg: '25.5'}}
 
