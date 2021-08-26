@@ -93,8 +93,18 @@ body{
 .left-armory{
 
 }
+.dropdown-weapon-stats{
+  width: 50%;
+  margin-top: 10px;
+}
 .mid-armory{
 
+}
+.dropdown{
+  color: black
+}
+.dropdown-weapon-selection{
+  width: 50%;
 }
 .damage-box{
   display: flex;
@@ -106,6 +116,22 @@ body{
   text-align: right;
   padding: 0 10px 0 10px;
 }
+.stats-card-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 5px 0;
+}
+.left-stat-box{
+  width: 34%;
+  text-align: right;
+  padding-right: 10px;
+}
+.stat-input{
+  width: 50px;
+}
+
 .right-damage{
   text-align: left
 }
