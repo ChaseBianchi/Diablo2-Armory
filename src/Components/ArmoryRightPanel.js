@@ -16,7 +16,7 @@ function ArmoryRightPanel() {
     }
     return (
         <div style={{opacity: rightPanel}} className={`right-armory panel`}>
-            <h2>Character</h2>
+            <h2>{toon}</h2>
             {/* <div className="underscore-line"></div> */}
             <div className='stats-card-container'>
             <div className="left-stat-box">

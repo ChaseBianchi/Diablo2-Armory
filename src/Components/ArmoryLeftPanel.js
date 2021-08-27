@@ -12,8 +12,9 @@ function ArmoryLeftPanel() {
         setWeapon(newWeapon)
     }
     const handleStatsDropdown= stat =>{
-        console.log('stat ', stat)
-        setWeapon({...weapon, stats: [...weapon.stats, {name: stat.value, value: ''}]})
+        if(!(weapon.stats.some(obj => obj.name===stat.value))){
+            setWeapon({...weapon, stats: [...weapon.stats, {name: stat.value, value: ''}]})
+        }
     }
     return (
         <div style={{opacity: leftPanel}} className={`left-armory panel`}>
