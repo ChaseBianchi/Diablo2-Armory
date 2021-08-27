@@ -4,13 +4,49 @@ import { weapons, stats, weaponTable } from '../weapons'
 import Select from 'react-select'
 
 function ArmoryRightPanel() {
-    const {toon, weapon, damage, rightPanel } = useContext(UserContext)
-
+    const {toon, setStrength, setDexterity, strength, dexterity, weapon, damage, rightPanel } = useContext(UserContext)
+    const onChange= e =>{
+        const re = /^[0-9]+$/;
+        console.log(e)
+        if (e.target.value==='' || re.test(e.target.value)) {
+            if(e.target.name==='strength'){
+                setStrength(e.target.value)
+            }else{setDexterity(e.target.value)}
+        }
+    }
     return (
         <div style={{opacity: rightPanel}} className={`right-armory panel`}>
-                <h2>Character</h2>
-                
+            <h2>Character</h2>
+            {/* <div className="underscore-line"></div> */}
+            <div className='stats-card-container'>
+            <div className="left-stat-box">
+            <input
+                className='stat-input'
+                name='strength' 
+                type='text'
+                placeholder='#'
+                value={strength}   
+                onChange={onChange} 
+                />
             </div>
+            <div className="right-stat-box">
+            Strength
+            </div>
+            <div className="left-stat-box">
+            <input
+                className='stat-input'
+                name='dexterity' 
+                type='text'
+                placeholder='#'
+                value={dexterity}   
+                onChange={onChange} 
+                />
+            </div>
+            <div className="right-stat-box">
+            Dexterity
+            </div>
+            </div>
+        </div>
     )
 }
 

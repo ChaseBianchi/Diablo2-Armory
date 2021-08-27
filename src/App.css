@@ -88,7 +88,9 @@ body{
 .mod{
   width: 200px;
   height: 40px;
-  border: 2px double rgb(126, 126, 126);
+  border: 2px double rgb(165, 164, 164);
+  border-right: 2px double rgb(70, 69, 69);
+  border-bottom: 2px double rgb(87, 87, 87);
   margin: 0 0px 20px 0px;
   display: flex;  
   flex-flow: row nowrap;
@@ -117,9 +119,29 @@ body{
   flex-flow: column nowrap;
   align-items: center;
   transition: opacity 1s ease-in-out;
+  margin-bottom: 50px;
 }
 .left-armory{
   
+}
+.panel h2{
+  font-size: 2rem;
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-shadow: 2px 2px rgba(149, 149, 149, 0.7);
+}
+.panel h4{
+  margin-bottom: 20px
+}
+.panel .dropdown{
+  margin: 10px 0;
+}
+.eth-label{
+  margin: 0;
+}
+.base-dmg{
+  margin: 5px 0;
+  font-weight: bold;
 }
 .dropdown-weapon-stats{
   width: 50%;
@@ -150,10 +172,11 @@ body{
   display: flex;
   flex-flow: row nowrap;
   margin: 5px 0;
+  justify-content: center;
 }
 .left-stat-box{
   /* border: 1px solid red; */
-  width: 34%;
+  width: 20%;
   padding-right: 10px;
   display: flex;
   flex-flow: row nowrap;
@@ -175,10 +198,16 @@ body{
   margin-right: 8px
 }
 .stat-input{
-  width: 40px;
+  width: 32px;
   text-align: center;
 }
-
+.underscore-line{
+  width: 70%;
+  height: 3px;
+  background: rgb(78, 70, 128);
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
 .right-damage{
   text-align: left
 }
@@ -222,6 +251,40 @@ body{
 }
 .weapon-image{
   width: 100%;
+}
+
+/*  FOOTER  */
+.footer-container{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background: url(./media/panel.png);
+  border-top: 3px double rgb(100, 100, 100, .5);
+}
+.footer-link{
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 50%;
+}
+.github{
+  background: url(./media/github.png)
+}
+.linkedin{
+  background: url(./media/linkedin.png)
+}
+.twitter{
+  background: url(./media/twitter.png)
+}
+.email{
+  background: url(./media/email.png);
+}
+.chase-bianchi{
+  text-align: center;
 }
 
 

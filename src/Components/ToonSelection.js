@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, createRef } from 'react'
 import { UserContext } from '../Contexts'
 
 function ToonSelection() {
     const user = useContext(UserContext)
+    const scrollRef = createRef()
     const handleToonClick = name =>{
         user.setToon(name)
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
+    
     return (
         <div className="character-selection">
             <div className="campfire-image">
@@ -17,7 +20,7 @@ function ToonSelection() {
                 <div className="druid-box selection-box" onClick={()=>handleToonClick('Druid')}></div>
                 <div className="pal-box selection-box" onClick={()=>handleToonClick('Paladin')}></div>
             </div>
-            <p id='toon-text'>{user.toon ? `[ ${user.toon} ]` : '[ Click a character to select your class ]'}</p>
+            <p ref={scrollRef} id='toon-text'>{user.toon ? `[ ${user.toon} ]` : '[ Click a character to select your class ]'}</p>
         </div>
     )
 }

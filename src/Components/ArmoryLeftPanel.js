@@ -17,8 +17,16 @@ function ArmoryLeftPanel() {
     }
     return (
         <div style={{opacity: leftPanel}} className={`left-armory panel`}>
-                <h2>Weapon</h2>
-                <label>Ethereal 
+                <h2>{weapon.type}</h2>
+                {
+                weapon.type
+                    ?   (weapon.isEthereal
+                        ? <h4 className='base-dmg'>{`${Math.floor(weaponTable[weapon.type].min*1.5)}-${Math.floor(weaponTable[weapon.type].max*1.5)} base damage`}</h4>
+                        : <h4 className='base-dmg'>{`${weaponTable[weapon.type].min}-${weaponTable[weapon.type].max} base damage`}</h4>
+                        )
+                    : ''
+                }
+                <label className='eth-label'>Ethereal 
                     <input
                     name='isEthereal'
                     type='checkbox'
@@ -26,6 +34,7 @@ function ArmoryLeftPanel() {
                     onChange={handleEthereal} 
                     />
                 </label>
+               
                 <Select
                 options={stats}
                 className='dropdown-weapon-stats dropdown'
@@ -34,14 +43,7 @@ function ArmoryLeftPanel() {
                 isSearchable
                 autoFocus
                 />
-                {
-                weapon.type
-                    ?   (weapon.isEthereal
-                        ? <p>{`${Math.floor(weaponTable[weapon.type].min*1.5)}-${Math.floor(weaponTable[weapon.type].max*1.5)} base damage`}</p>
-                        : <p>{`${weaponTable[weapon.type].min}-${weaponTable[weapon.type].max} base damage`}</p>
-                        )
-                    : ''
-                }
+                
                 {
                 weapon.stats.length>0 
                 ? weapon.stats.map(stat=> {

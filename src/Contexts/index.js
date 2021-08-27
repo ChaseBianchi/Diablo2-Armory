@@ -4,6 +4,8 @@ export const UserContext = createContext(
     {
         mod: 'lod',
         toon: '',
+        strength: '',
+        dexterity: '',
         weapon: {iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
         damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
@@ -18,6 +20,8 @@ export const UserContext = createContext(
         setToon: ()=>{},
         calcDamage: ()=>{},
         setMod: ()=>{},
+        setStrength: ()=>{},
+        setDexterity: ()=>{},
     }
 );
 
@@ -25,6 +29,8 @@ export const UserContextProvider = props =>{
     const initState = {
         mod: 'lod',
         toon: '',
+        strength: '',
+        dexterity: '',
         weapon: {iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
         damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
@@ -39,6 +45,8 @@ export const UserContextProvider = props =>{
         setToon: ()=>{},
         calcDamage: ()=>{},
         setMod: ()=>{},
+        setStrength: ()=>{},
+        setDexterity: ()=>{},
     }
     const [userState, setUserState] = useState(initState)
 
@@ -77,7 +85,12 @@ export const UserContextProvider = props =>{
     function calcDamage(){
 
     }
+    function setStrength(value){
+        setUserState({...userState, strength: value})
+    }
+    function setDexterity(value){
+        setUserState({...userState, dexterity: value})
+    }
     
-    
-    return <UserContext.Provider value={{...userState, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels, calcDamage}} >{props.children}</UserContext.Provider>
+    return <UserContext.Provider value={{...userState, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels, calcDamage}} >{props.children}</UserContext.Provider>
 }

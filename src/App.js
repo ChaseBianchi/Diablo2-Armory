@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import ToonSelection from './Components/ToonSelection';
 import { UserContextProvider } from './Contexts';
 import Armory from './Components/Armory';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Header />
           <ToonSelection />
           <Armory />
+          <Footer />
     </UserContextProvider>
     </div>
   );
