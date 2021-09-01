@@ -43,7 +43,7 @@ function ArmoryLeftPanel() {
                     name='isEthereal'
                     type='checkbox'
                     checked={weapon.isEthereal}
-                    onChange={handleEthereal} 
+                    onChange={handleEthereal}
                     />
                 </label>
                 : ''
