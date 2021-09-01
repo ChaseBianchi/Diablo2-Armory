@@ -5,21 +5,28 @@ import Select from 'react-select'
 
 function ArmoryMiddlePanel() {
     const {toon, weapon, damage, setWeapon, setWeapAndPanels, midPanel} = useContext(UserContext)
+    const [img, setImg] = useState('default')
     const handleWeaponSelect = evt =>{
-        setWeapAndPanels({type: evt.value})
+        setWeapAndPanels({type: evt.label, base: weaponTable[evt.label]})
+        setImg(evt.image)
     }
     return (
         <div style={{opacity: midPanel }} className="middle-armory panel">
                 <div className="weapon-select">
                 <Select 
-                options={weapons}
+                options={weapons.sort((w1, w2)=>{
+                    if(w1.label<w2.label){return -1}
+                    if(w1.label>w2.label){return 1}
+                    return 0
+                    })
+                }
                 onChange={handleWeaponSelect}
                 placeholder='Select Weapon'
                 className='dropdown-weapon-selection dropdown'
                 isSearchable
                 />
                 <div className='weapon-image-div'>
-                    <img style={weapon.type ? {border: '3px solid #A1A1A1'} : {}} src={weapon.type ? `/media/${weapon.type.toLowerCase().replace(/\s+/g, '')}.png` : '/media/default.png'} 
+                    <img style={weapon.type ? {border: '3px solid #A1A1A1'} : {}} src={img ? `/media/${img.toLowerCase().replace(/\s+/g, '')}.png` : '/media/default.png'} 
                     alt="weapon" className="weapon-image" 
                     />
                 </div>

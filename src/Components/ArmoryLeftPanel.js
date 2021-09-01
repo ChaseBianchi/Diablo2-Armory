@@ -16,18 +16,29 @@ function ArmoryLeftPanel() {
             setWeapon({...weapon, stats: [...weapon.stats, {name: stat.value, value: ''}]})
         }
     }
+    const handleWeaponMethod = evt =>{
+        const newWeapon = {...weapon, method: evt.target.value}
+        setWeapon(newWeapon)
+
+    }
+    const baseDmgMap = {
+        '1h': {min: 'min', max: 'max'},
+        '2h': {min: 'min_2h', max: 'max_2h'},
+        'throw': {min: 'throw_min', max: 'throw_max'},
+    }
     return (
         <div style={{opacity: leftPanel}} className={`left-armory panel`}>
                 <h2>{weapon.type}</h2>
                 {
                 weapon.type
                     ?   (weapon.isEthereal
-                        ? <h4 className='base-dmg'>{`${Math.floor(weaponTable[weapon.type].min*1.5)}-${Math.floor(weaponTable[weapon.type].max*1.5)} base damage`}</h4>
-                        : <h4 className='base-dmg'>{`${weaponTable[weapon.type].min}-${weaponTable[weapon.type].max} base damage`}</h4>
+                        ? <h3 className='base-dmg'>{`${Math.floor(weaponTable[weapon.type][baseDmgMap[weapon.method].min]*1.5)}-${Math.floor(weaponTable[weapon.type][baseDmgMap[weapon.method].max]*1.5)} base damage`}</h3>
+                        : <h3 className='base-dmg'>{`${weaponTable[weapon.type][baseDmgMap[weapon.method].min]}-${weaponTable[weapon.type][baseDmgMap[weapon.method].max]} base damage`}</h3>
                         )
                     : ''
                 }
-                <label className='eth-label'>Ethereal 
+                {(weapon.base.type!=='bow' && weapon.base.type!=='crossbow')
+                ? <label className='eth-label'>Ethereal 
                     <input
                     name='isEthereal'
                     type='checkbox'
@@ -35,7 +46,57 @@ function ArmoryLeftPanel() {
                     onChange={handleEthereal} 
                     />
                 </label>
-               
+                : ''
+                }
+                {
+                weapon.base.throw_min 
+                ?   <div className="weapon-method-container">
+                        <label className='eth-label'>1 Hand 
+                            <input
+                            name='weapon-method'
+                            value='1h'
+                            type='radio'
+                            checked={weapon.method==='1h'}
+                            onChange={handleWeaponMethod} 
+                            />
+                        </label> 
+                        <label className='eth-label'>Throw 
+                            <input
+                            name='weapon-method'
+                            value='throw'
+                            type='radio'
+                            checked={weapon.method==='throw'}
+                            onChange={handleWeaponMethod} 
+                            />
+                        </label> 
+                    </div>  
+                : ''
+                }
+                {
+                weapon.base.min_2h 
+                ?   <div className="weapon-method-container">
+                        <label className='eth-label'>1 Hand 
+                            <input
+                            name='weapon-method'
+                            value='1h'
+                            type='radio'
+                            checked={weapon.method==='1h'}
+                            onChange={handleWeaponMethod} 
+                            />
+                        </label> 
+                        <label className='eth-label'>2 Hand 
+                            <input
+                            name='weapon-method'
+                            value='2h'
+                            type='radio'
+                            checked={weapon.method==='2h'}
+                            onChange={handleWeaponMethod} 
+                            />
+                        </label> 
+                    </div>  
+                : ''
+                }
+                
                 <Select
                 options={stats}
                 className='dropdown-weapon-stats dropdown'
