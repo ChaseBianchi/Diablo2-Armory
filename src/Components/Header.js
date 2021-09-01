@@ -6,7 +6,7 @@ const handleLoginClick = () =>{
 }
 function Header() {
     return (
-        
+            <div className="header-box">
             <header>
                 <h1 className='h1-title'>Diablo II Armory</h1>
                 <div onClick={handleLoginClick}className="login-box">
@@ -16,7 +16,7 @@ function Header() {
                     <img className='title-image' src={titleimg} alt='title'></img>
                 </div> */}
             </header>
-        
+            </div>
     )
 }
 
