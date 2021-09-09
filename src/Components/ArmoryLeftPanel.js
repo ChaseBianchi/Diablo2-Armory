@@ -26,9 +26,25 @@ function ArmoryLeftPanel() {
         '2h': {min: 'min_2h', max: 'max_2h'},
         'throw': {min: 'throw_min', max: 'throw_max'},
     }
+    const colorKey = {
+        '': '#ffffff',
+        'Normal': '#ffffff',
+        'Superior': '#ffffff',
+        'Magic': '#2240e8',
+        'Rare': '#fbff42',
+        'Set': '#5def0e',
+        'Unique': '#b79e1f',
+    }
     return (
         <div style={{opacity: leftPanel}} className={`left-armory panel`}>
-                <h2>{weapon.type}</h2>
+                <h2 style={{color: colorKey[weapon.quality]}}>{
+                    weapon.quality==='Unique' || weapon.quality==='Set'
+                    ? weapon.name
+                    : weapon.type
+                }</h2>
+                <p>{weapon.quality==='Unique' || weapon.quality==='Set'
+                    ? weapon.type
+                    : ''}</p>
                 {
                 weapon.type
                     ?   (weapon.isEthereal

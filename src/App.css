@@ -153,10 +153,22 @@ header{
 .curr-mod{
   background-color: rgb(87, 87, 87);
 }
+.coming-soon{
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.coming-soon p{
+  color: rgb(241, 145, 145);
+  font-size: .75rem;
+  position: absolute;
+  top: 11px;
+  left: 33%;
+}
 
 .panel{
   width: 30%;
-  height: 600px;
+  min-height: 500px;
   border: 2px double rgb(126, 126, 126);
   border-right: 2px double rgb(44, 44, 44);
   border-bottom: 2px double rgb(87, 87, 87);
@@ -177,10 +189,14 @@ header{
   font-size: 2rem;
   margin-top: 5px;
   margin-bottom: 0;
-  text-shadow: 2px 2px rgba(149, 149, 149, 0.7);
+  text-shadow: 1px 1px rgba(149, 149, 149, 0.5);
 }
 .panel h4{
   margin-bottom: 20px
+}
+.panel p{
+  margin: 0;
+  padding: 0;
 }
 .panel .dropdown{
   margin: 10px 0;
@@ -204,6 +220,7 @@ header{
 }
 .dropdown-weapon-selection{
   width: 50%;
+  margin-top: 5px !important;
 }
 .damage-box{
   display: flex;

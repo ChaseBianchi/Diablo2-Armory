@@ -12,9 +12,15 @@ function Armory() {
         return (
         <div className={`armory-box`}>
             <div className="mod-select">
-                <button onClick={setMod} value='lod' className={`lod mod ${mod==='lod' ? 'curr-mod' : ''}`} >Lord of Destruction</button>
+                <div className="coming-soon">
+                    <button onClick={()=>{}} value='lod' className={`lod mod ${mod==='lod' ? 'curr-mod' : ''}`} >Lord of Destruction</button>
+                    <p>coming soon</p>
+                </div>
                 <button onClick={setMod} value='pd2' className={`lod mod ${mod==='pd2' ? 'curr-mod' : ''}`}>Project Diablo 2</button>
-                <button onClick={setMod} value='pod' className={`lod mod ${mod==='pod' ? 'curr-mod' : ''}`}>Path of Diablo</button>
+                <div className="coming-soon">
+                    <button onClick={()=>{}} value='pod' className={`lod mod ${mod==='pod' ? 'curr-mod' : ''}`}>Path of Diablo</button>
+                    <p>coming soon</p>
+                </div>
             </div>
             <ArmoryLeftPanel />
             <ArmoryMiddlePanel />

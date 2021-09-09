@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../Contexts'
 import { weapons, stats, weaponTable } from '../Data/weapons'
 import Select from 'react-select'
@@ -14,6 +14,11 @@ function ArmoryRightPanel() {
             }else{setDexterity(e.target.value)}
         }
     }
+    
+    
+    
+    // Async / await usage
+    // const jsonArray=await csv().fromFile(csvFilePath);
     return (
         <div style={{opacity: rightPanel}} className={`right-armory panel`}>
             <h2>{toon}</h2>

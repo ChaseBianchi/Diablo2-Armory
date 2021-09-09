@@ -7,7 +7,7 @@ export const UserContext = createContext(
         strength: '',
         dexterity: '',
         weapon: {base: {}, method: '1h', iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
-        damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
+        // damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
         midPanel: '0',
         rightPanel: '0',
@@ -18,7 +18,7 @@ export const UserContext = createContext(
         resetAll: ()=>{},
         setWeapon: ()=>{},
         setToon: ()=>{},
-        calcDamage: ()=>{},
+        // calcDamage: ()=>{},
         setMod: ()=>{},
         setStrength: ()=>{},
         setDexterity: ()=>{},
@@ -33,7 +33,7 @@ export const UserContextProvider = props =>{
         strength: '',
         dexterity: '',
         weapon: {base: {}, method: '1h', iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
-        damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
+        // damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
         midPanel: '0',
         rightPanel: '0',
@@ -44,7 +44,7 @@ export const UserContextProvider = props =>{
         resetAll: ()=>{},
         setWeapon: ()=>{},
         setToon: ()=>{},
-        calcDamage: ()=>{},
+        // calcDamage: ()=>{},
         setMod: ()=>{},
         setStrength: ()=>{},
         setDexterity: ()=>{},
@@ -84,9 +84,9 @@ export const UserContextProvider = props =>{
     function resetUser(){
         setUserState({initState})
     }
-    function calcDamage(){
+    // function calcDamage(){
 
-    }
+    // }
     function setStrength(value){
         setUserState({...userState, strength: value})
     }
@@ -97,5 +97,5 @@ export const UserContextProvider = props =>{
         setUserState({...userState, weapon: {...userState.weapon, ...weapon}})
     }
     
-    return <UserContext.Provider value={{...userState, pasteWeapon, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels, calcDamage}} >{props.children}</UserContext.Provider>
+    return <UserContext.Provider value={{...userState, pasteWeapon, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels}} >{props.children}</UserContext.Provider>
 }
