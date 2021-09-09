@@ -28,11 +28,7 @@ header{
   background: url(./media/panel.png);
   border-bottom: 3px double rgb(100, 100, 100, .5);
 }
-/* .title-box{
-  height: 100%;
-  width: auto;
 
-} */
 .h1-title{
   font-family: 'Stencil Std';
   margin: 0;
@@ -117,6 +113,12 @@ header{
 }
 
 /* Armory */
+.paste{
+  color: rgb(0, 0, 212);
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
 .armory-box{
   width: 100%;
   display: flex;
@@ -231,14 +233,15 @@ header{
   justify-content: flex-end;
 }
 .cancel-btn{
-  font-size: .8rem;
-  font-weight: bold;
+  font-size: 1rem;
+  /* font-weight: bold; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
+  margin-top: 2.5px;
   border: 1px double rgb(182, 182, 182);
   color: rgb(97, 49, 49);
   border-radius: 50%;

@@ -1,17 +1,41 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../Contexts'
-import { weapons, stats, weaponTable } from '../weapons'
+import { weapons, stats, weaponTable } from '../Data/weapons'
 import Select from 'react-select'
 
 function ArmoryMiddlePanel() {
-    const {toon, weapon, damage, setWeapon, setWeapAndPanels, midPanel} = useContext(UserContext)
+    const {toon, weapon, pasteWeapon, damage, mod, setWeapon, setWeapAndPanels, midPanel, toggleLeftPanel, toggleRightPanel} = useContext(UserContext)
     const [img, setImg] = useState('default')
+    const [text, setText] = useState({})
     const handleWeaponSelect = evt =>{
         setWeapAndPanels({type: evt.label, base: weaponTable[evt.label]})
         setImg(evt.image)
     }
+    const pasteFromClipboard = ()=>{
+        navigator.clipboard.readText()
+            .then(
+                clipText => {
+                    const weap = JSON.parse(clipText)   
+                    setWeapAndPanels(weap)
+                    for(let i=0;i<weapons.length; i++){
+                        if(weapons[i].image === weap.type){
+                            setImg(weap.type)
+                            break
+                        }
+                        if(weapons[i].label === weap.type){
+                            setImg(weapons[i].image)
+                            break
+                        }
+                    }
+                }
+            )
+            .catch(e=>console.log('error ',e))
+    }
     return (
         <div style={{opacity: midPanel }} className="middle-armory panel">
+                {
+                    mod==='pd2' ? <p className='paste' onClick={pasteFromClipboard}>paste from clipboard</p> : ''
+                }
                 <div className="weapon-select">
                 <Select 
                 options={weapons.sort((w1, w2)=>{

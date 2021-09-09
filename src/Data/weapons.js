@@ -538,6 +538,8 @@ export const weaponTable = {
     'Glorious Axe': {min: '60', max: '124', speed: '10', throw_min: '', throw_max: '', min_2h: '', max_2h: '', type: 'axe'}, 
 }
 
+
+// examples from pd2:
 export const pd2Weapons = [    
     {
         // crafted ammy no corr
@@ -768,6 +770,62 @@ export const pd2Weapons = [
         }
         ],
         "type": "Amulet"
-    }
+    },
+    {
+        "iLevel": 81,
+        "name": "Lacerator",
+        "quality": "Unique",
+        "stats": [
+          {
+            "chance%": 33,
+            "level": 16,
+            "name": "item_skillonhit",
+            "skill": "AmpDmg Proc"
+          },
+          {
+            "name": "item_fasterattackrate",
+            "value": 30
+          },
+          {
+            "name": "item_preventheal",
+            "value": 1
+          },
+          {
+            "name": "item_openwounds",
+            "value": 33
+          },
+          {
+            "name": "item_maxdamage_percent",
+            "value": 246
+          },
+          {
+            "corrupted": 1,
+            "name": "item_mindamage_percent",
+            "value": 246
+          },
+          {
+            "name": "mindamage",
+            "value": 20
+          },
+          {
+            "corrupted": 1,
+            "name": "lifedrainmindam",
+            "value": 6
+          },
+          {
+            "name": "item_throw_mindamage",
+            "value": 20
+          },
+          {
+            "name": "item_splashonhit",
+            "value": 100
+          },
+          {
+            "name": "corrupted",
+            "value": 17
+          }
+        ],
+        "type": "Winged Axe"
+      },
     
 ]

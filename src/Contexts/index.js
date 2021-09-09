@@ -2,7 +2,7 @@ import React, { useState, createContext } from 'react';
 
 export const UserContext = createContext(
     {
-        mod: 'lod',
+        mod: 'pd2',
         toon: '',
         strength: '',
         dexterity: '',
@@ -22,12 +22,13 @@ export const UserContext = createContext(
         setMod: ()=>{},
         setStrength: ()=>{},
         setDexterity: ()=>{},
+        pasteWeapon: ()=>{},
     }
 );
 
 export const UserContextProvider = props =>{
     const initState = {
-        mod: 'lod',
+        mod: 'pd2',
         toon: '',
         strength: '',
         dexterity: '',
@@ -47,6 +48,7 @@ export const UserContextProvider = props =>{
         setMod: ()=>{},
         setStrength: ()=>{},
         setDexterity: ()=>{},
+        pasteWeapon: ()=>{},
     }
     const [userState, setUserState] = useState(initState)
 
@@ -91,6 +93,9 @@ export const UserContextProvider = props =>{
     function setDexterity(value){
         setUserState({...userState, dexterity: value})
     }
+    function pasteWeapon(weapon){
+        setUserState({...userState, weapon: {...userState.weapon, ...weapon}})
+    }
     
-    return <UserContext.Provider value={{...userState, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels, calcDamage}} >{props.children}</UserContext.Provider>
+    return <UserContext.Provider value={{...userState, pasteWeapon, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels, calcDamage}} >{props.children}</UserContext.Provider>
 }

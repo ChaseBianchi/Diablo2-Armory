@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import {weaponlist} from './weapons'
+import {weaponlist} from './Data/weapons'
 import Header from './Components/Header'
 import ToonSelection from './Components/ToonSelection';
 import { UserContextProvider } from './Contexts';

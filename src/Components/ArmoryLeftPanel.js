@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../Contexts'
-import { weapons, stats, weaponTable } from '../weapons'
+import { weapons, stats, weaponTable } from '../Data/weapons'
 import Select from 'react-select'
 import StatsCards from './StatsCards'
 
