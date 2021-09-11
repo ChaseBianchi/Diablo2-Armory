@@ -116,7 +116,7 @@ function ArmoryLeftPanel() {
                 <Select
                 options={stats}
                 className='dropdown-weapon-stats dropdown'
-                placeholder='Add a Stat'
+                placeholder='Weapon Stats'
                 onChange={handleStatsDropdown}
                 isSearchable
                 autoFocus

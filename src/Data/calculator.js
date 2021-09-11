@@ -1,4 +1,4 @@
-export default function calculateDmg(weapon, isEthereal, strength, dexterity){
+export default function calculateDmg(weapon, isEthereal, strength, dexterity, skills, auras){
     const {base, stats} = weapon
     const physMods = []
     const fireMods = []
@@ -28,11 +28,7 @@ export default function calculateDmg(weapon, isEthereal, strength, dexterity){
             mod.name==='item_maxdamage_bytime' ||
             mod.name==='item_maxdamage_percent_bytime' ||
             mod.name==='item_kick_damage_bytime' ||
-            mod.name==='item_deadlystrike_bytime' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' 
+            mod.name==='item_deadlystrike_bytime' 
         ){
             physMods.push(mod)
         }
@@ -40,12 +36,7 @@ export default function calculateDmg(weapon, isEthereal, strength, dexterity){
             mod.name==='firemindam' ||
             mod.name==='firemaxdam' ||
             mod.name==='item_fire_damagemax_perlevel' ||
-            mod.name==='item_fire_damagemax_bytime' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' 
+            mod.name==='item_fire_damagemax_bytime' 
         ){
             fireMods.push(mod)
         }
@@ -53,11 +44,7 @@ export default function calculateDmg(weapon, isEthereal, strength, dexterity){
             mod.name==='coldmindam' ||
             mod.name==='coldmaxdam' ||
             mod.name==='item_cold_damagemax_perlevel' ||
-            mod.name==='item_cold_damagemax_bytime' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' 
+            mod.name==='item_cold_damagemax_bytime'
         ){
             coldMods.push(mod)
         }
@@ -65,16 +52,7 @@ export default function calculateDmg(weapon, isEthereal, strength, dexterity){
             mod.name==='lightmindam' ||
             mod.name==='lightmaxdam' ||
             mod.name==='item_ltng_damagemax_perlevel' ||
-            mod.name==='item_ltng_damagemax_bytime' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' 
+            mod.name==='item_ltng_damagemax_bytime' 
             ){
             lightMods.push(mod)
         }
@@ -93,13 +71,7 @@ export default function calculateDmg(weapon, isEthereal, strength, dexterity){
         }
         else if(
             mod.name==='magicmindam' ||
-            mod.name==='magicmaxdam' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name==='' ||
-            mod.name===''
+            mod.name==='magicmaxdam'
         ){
             magicMods.push(mod)
         }

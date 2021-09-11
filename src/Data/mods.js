@@ -1,8 +1,8 @@
 export const mods = [
-{name: 'strength', label: 'Strength',},
-{name: 'energy', label: 'Energy',},
-{name: 'dexterity', label: 'Dexterity',},
-{name: 'vitality', label: 'Vitality',},
+{name: 'strength', label: '',},
+{name: 'energy', label: '',},
+{name: 'dexterity', label: '',},
+{name: 'vitality', label: '',},
 {name: 'statpts', label: '',},
 {name: 'newskills', label: '',},
 {name: 'hitpoints', label: '',},

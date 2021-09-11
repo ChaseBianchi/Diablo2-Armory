@@ -3,9 +3,7 @@ import React, { useState, createContext } from 'react';
 export const UserContext = createContext(
     {
         mod: 'pd2',
-        toon: '',
-        strength: '',
-        dexterity: '',
+        toon: {name: '',level: '', strength: '', dexterity: '',},
         weapon: {base: {}, method: '1h', iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
         // damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
@@ -23,15 +21,14 @@ export const UserContext = createContext(
         setStrength: ()=>{},
         setDexterity: ()=>{},
         pasteWeapon: ()=>{},
+        setLevel: ()=>{},
     }
 );
 
 export const UserContextProvider = props =>{
     const initState = {
         mod: 'pd2',
-        toon: '',
-        strength: '',
-        dexterity: '',
+        toon: {name: '',level: '', strength: '', dexterity: '',},
         weapon: {base: {}, method: '1h', iLevel: 0, quality: '', type: '', isEthereal: false, isRuneword: false, runeword: '', isRune: false, socketed: [], stats: []},
         // damage: {total: {min: 0, max: 0, avg: 0}, physical: {min: 0, max: 0, avg: 0}, fire: {min: 0, max: 0, avg: 0}, cold: {min: 0, max: 0, avg: 0}, lightning: {min: 0, max: 0, avg: 0}, poison: {min: 0, max: 0, avg: 0}},
         leftPanel: '0',
@@ -49,11 +46,12 @@ export const UserContextProvider = props =>{
         setStrength: ()=>{},
         setDexterity: ()=>{},
         pasteWeapon: ()=>{},
+        setLevel: ()=>{},
     }
     const [userState, setUserState] = useState(initState)
 
-    function setToon(toon){
-        const newState = {...userState, midPanel: '100', toon: toon}
+    function setToon(name){
+        const newState = {...userState, midPanel: '100', toon: {...userState.toon, name: name}}
         setUserState(newState)
     }
     function setMod(e){
@@ -87,15 +85,19 @@ export const UserContextProvider = props =>{
     // function calcDamage(){
 
     // }
+    function setLevel(value){
+        setUserState({...userState, toon: {...userState.toon, level: value}})
+
+    }
     function setStrength(value){
-        setUserState({...userState, strength: value})
+        setUserState({...userState, toon: {...userState.toon, strength: value}})
     }
     function setDexterity(value){
-        setUserState({...userState, dexterity: value})
+        setUserState({...userState, toon: {...userState.toon, dexterity: value}})
     }
     function pasteWeapon(weapon){
         setUserState({...userState, weapon: {...userState.weapon, ...weapon}})
     }
     
-    return <UserContext.Provider value={{...userState, pasteWeapon, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels}} >{props.children}</UserContext.Provider>
+    return <UserContext.Provider value={{...userState, pasteWeapon, setLevel, setStrength, setDexterity, setMod, setWeapon, setToon, resetUser, toggleLeftPanel, toggleMidPanel, toggleRightPanel, setWeapAndPanels}} >{props.children}</UserContext.Provider>
 }
