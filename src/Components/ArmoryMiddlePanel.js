@@ -23,6 +23,7 @@ function ArmoryMiddlePanel() {
             .then(
                 clipText => {
                     const weap = JSON.parse(clipText)
+                    console.log(weap)
                     if(weap.type in weaponTable){
                         setWeapAndPanels({...weap, base: weaponTable[weap.type]})
                     }
@@ -37,6 +38,7 @@ function ArmoryMiddlePanel() {
                             break
                         }
                     }
+
                 }
             )
             .catch(e=>console.log('error ',e))
@@ -44,7 +46,7 @@ function ArmoryMiddlePanel() {
     return (
         <div style={{opacity: midPanel }} className="middle-armory panel">
                 {
-                    mod==='pd2' ? <p className='paste' onClick={pasteFromClipboard}>paste from clipboard</p> : ''
+                    mod==='pd2' ? <a href='#toon-text'><p className='paste' onClick={pasteFromClipboard}>paste from clipboard</p></a> : ''
                 }
                 <div className="weapon-select">
                 <Select 

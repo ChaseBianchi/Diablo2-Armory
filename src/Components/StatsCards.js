@@ -22,7 +22,7 @@ function StatsCards(props) {
     }
     return (
         <div className='stats-card-container'>
-            <div className="left-stat-box">
+            <div className="left-stat-card">
                 <button  
                 onClick={handleCancelStat}
                 className='cancel-btn'
@@ -36,7 +36,7 @@ function StatsCards(props) {
                 onChange={onChange} 
                 />
             </div>
-            <div className="right-stat-box">
+            <div className="right-stat-card">
             {stat.name}
             </div>
                 

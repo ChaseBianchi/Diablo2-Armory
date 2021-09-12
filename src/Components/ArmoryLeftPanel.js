@@ -30,13 +30,14 @@ function ArmoryLeftPanel() {
         '': '#ffffff',
         'Normal': '#ffffff',
         'Superior': '#ffffff',
-        'Magic': '#2240e8',
-        'Rare': '#fbff42',
-        'Set': '#5def0e',
-        'Unique': '#b79e1f',
+        'Magic': '#7B7BFE',
+        'Rare': '#FEFE9A',
+        'Set': '#25FE00',
+        'Unique': '#BF9A7B',
+        'Crafted': '#FECC31'
     }
     return (
-        <div style={{opacity: leftPanel}} className={`left-armory panel`}>
+        <div style={{opacity: leftPanel}} className={`left-armory panel`} id='weapon-panel'>
                 <h2 style={{color: colorKey[weapon.quality]}}>{
                     weapon.quality==='Unique' || weapon.quality==='Set'
                     ? weapon.name
@@ -53,7 +54,7 @@ function ArmoryLeftPanel() {
                         )
                     : ''
                 }
-                {(weapon.base.type!=='bow' && weapon.base.type!=='crossbow')
+                {(weapon.base.type!=='bow' && weapon.base.type!=='crossbow' && weapon.base.type!=='ama_bow')
                 ? <label className='eth-label'>Ethereal 
                     <input
                     name='isEthereal'

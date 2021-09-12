@@ -73,7 +73,6 @@ header{
   align-items: center;
 }
 .campfire-image {
-  /* border: 1px solid white; */
   width: 542px;
   height: 330px;
   display: flex;
@@ -81,31 +80,39 @@ header{
   align-items: center;
   background: url(./media/campfire.png);
   margin-bottom: 0;
+  /* border: 3px solid rgb(114, 25, 25); */
+
 }
 .selection-box {
-  /* border: 1px solid white; */
   height: 100%;
 }
 .amazon-box {
-  width: 89px;
+  width: 16%;
+  /* border: 1px solid white; */
 }
 .assassin-box {
-  width: 61px;
+  width: 12%;
+  /* border: 1px solid white; */
 }
 .necro-box {
-  width: 74px;
+  width: 14%;
+  /* border: 1px solid white; */
 }
 .barb-box {
-  width: 86px;
+  width: 16%;
+  /* border: 1px solid white; */
 }
 .sorc-box {
-  width: 73px;
+  width: 13%;
+  /* border: 1px solid white; */
 }
 .druid-box {
-  width: 67px;
+  width: 12%;
+  /* border: 1px solid white; */
 }
 .pal-box {
-  width: 84px;
+  width: 17%;
+  /* border: 1px solid white; */
 }
 #toon-text{
   font-size: 1.5rem;
@@ -114,7 +121,7 @@ header{
 
 /* Armory */
 .paste{
-  color: rgb(0, 0, 212);
+  color: rgb(44, 44, 214);
   text-decoration: underline;
   margin: 0;
   padding: 0;
@@ -123,7 +130,7 @@ header{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 
 }
 .mod-select{
@@ -167,7 +174,7 @@ header{
 }
 
 .panel{
-  width: 30%;
+  width: 340px;
   min-height: 500px;
   border: 2px double rgb(126, 126, 126);
   border-right: 2px double rgb(44, 44, 44);
@@ -179,7 +186,7 @@ header{
   flex-flow: column nowrap;
   align-items: center;
   transition: opacity 1s ease-in-out;
-  margin-bottom: 50px;
+  margin: 0 10px 50px 10px;
 }
 .weapon-method-container{
   padding: 5px;
@@ -272,6 +279,22 @@ header{
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+}
+.left-stat-card{
+  /* border: 1px solid red; */
+  width: 20%;
+  padding-right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.right-stat-card{
+  /* border: 1px solid red; */
+  width: 75%;
+  padding-right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
 }
 .cancel-btn{
   font-size: 1rem;
