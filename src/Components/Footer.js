@@ -13,7 +13,7 @@ function Footer() {
             <div className="chase-bianchi">Created by{<br />}Chase Bianchi</div>
             <a rel="noopener noreferrer" href="https://github.com/ChaseBianchi/Diablo2-Armory" target='_blank'><div className="github footer-link"></div></a>
             <a rel="noopener noreferrer" href="https://www.linkedin.com/in/chasebianchi/" target='_blank'><div className="linkedin footer-link"></div></a>
-            <a rel="noopener noreferrer" href="https://twitter.com/Chase_Bianchi" target='_blank'><div className="twitter footer-link"></div></a>
+            {/* <a rel="noopener noreferrer" href="https://twitter.com/Chase_Bianchi" target='_blank'><div className="twitter footer-link"></div></a> */}
             <Mailto email='cbianchi@protonmail.com' subject='Diablo 2 Armory' body='Hello Chase,'>
             <div className="email footer-link"></div>
             </Mailto>

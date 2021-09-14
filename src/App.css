@@ -79,6 +79,7 @@ header{
   flex-flow: row nowrap;
   align-items: center;
   background: url(./media/campfire.png);
+  background-size: contain;
   margin-bottom: 0;
   /* border: 3px solid rgb(114, 25, 25); */
 
@@ -186,7 +187,7 @@ header{
   flex-flow: column nowrap;
   align-items: center;
   transition: opacity 1s ease-in-out;
-  margin: 0 10px 50px 10px;
+  margin: 0 10px 15px 10px;
 }
 .weapon-method-container{
   padding: 5px;
@@ -219,9 +220,7 @@ header{
   width: 50%;
   margin-top: 10px;
 }
-.mid-armory{
 
-}
 .dropdown{
   color: black
 }
@@ -393,9 +392,9 @@ header{
 .linkedin{
   background: url(./media/linkedin.png)
 }
-.twitter{
+/* .twitter{
   background: url(./media/twitter.png)
-}
+} */
 .email{
   background: url(./media/email.png);
 }
@@ -403,21 +402,42 @@ header{
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* general */
 .hidden{
   opacity: 0;
   display: none;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px){
+  .campfire-image{
+    width: 271px;
+    height: 165px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background: url(./media/campfire.png);
+    background-size: contain;
+    margin-bottom: 0;
+  }
+  .left-armory{
+    order: 2;
+  }
+  .mid-armory{
+    order: 1
+  }
+  .right-armory{
+    order: 3
+  }
+  .login-box{
+    width: 60px;
+  }
+  .mod-select{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 }
