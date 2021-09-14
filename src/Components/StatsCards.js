@@ -31,7 +31,7 @@ function StatsCards(props) {
                 className='stat-input'
                 name={stat.name} 
                 type='text'
-                placeholder='#'
+                // placeholder='stats'
                 value={weapon.stats[weapon.stats.findIndex(obj=> obj.name===stat.name)].value}   
                 onChange={onChange} 
                 />
