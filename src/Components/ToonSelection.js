@@ -20,7 +20,7 @@ function ToonSelection() {
                 <div className="druid-box selection-box" onClick={()=>handleToonClick('Druid')}></div>
                 <div className="pal-box selection-box" onClick={()=>handleToonClick('Paladin')}></div>
             </div>
-            <p ref={scrollRef} id='toon-text'>{user.toon.name ? `[ ${user.toon.name} ]` : '[ Click to select Class ]'}</p>
+            <p ref={scrollRef} id='toon-text'>{user.toon.name ? `[ ${user.toon.name} ]` : '[ select a class ]'}</p>
         </div>
     )
 }

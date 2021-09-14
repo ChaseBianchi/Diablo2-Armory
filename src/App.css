@@ -86,6 +86,7 @@ header{
 }
 .selection-box {
   height: 100%;
+  cursor: pointer;
 }
 .amazon-box {
   width: 16%;
