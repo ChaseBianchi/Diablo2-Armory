@@ -5,7 +5,7 @@ import Select from 'react-select'
 import StatsCards from './StatsCards'
 
 function ArmoryLeftPanel() {
-    const {weapon, setWeapon, leftPanel} = useContext(UserContext)
+    const {weapon, setWeapon, leftPanel, mod} = useContext(UserContext)
     
     const handleEthereal = e =>{
         const newWeapon = {...weapon, isEthereal: !weapon.isEthereal}
@@ -49,8 +49,8 @@ function ArmoryLeftPanel() {
                 {
                 weapon.type
                     ?   (weapon.isEthereal
-                        ? <h3 className='base-dmg'>{`${Math.floor(weaponTable[weapon.type][baseDmgMap[weapon.method].min]*1.5)}-${Math.floor(weaponTable[weapon.type][baseDmgMap[weapon.method].max]*1.5)} base damage`}</h3>
-                        : <h3 className='base-dmg'>{`${weaponTable[weapon.type][baseDmgMap[weapon.method].min]}-${weaponTable[weapon.type][baseDmgMap[weapon.method].max]} base damage`}</h3>
+                        ? <h3 className='base-dmg'>{`${Math.floor(weaponTable[mod][weapon.type][baseDmgMap[weapon.method].min]*1.5)}-${Math.floor(weaponTable[mod][weapon.type][baseDmgMap[weapon.method].max]*1.5)} base damage`}</h3>
+                        : <h3 className='base-dmg'>{`${weaponTable[mod][weapon.type][baseDmgMap[weapon.method].min]}-${weaponTable[mod][weapon.type][baseDmgMap[weapon.method].max]} base damage`}</h3>
                         )
                     : ''
                 }

@@ -15,7 +15,7 @@ function ArmoryMiddlePanel() {
 
 
     const handleWeaponSelect = evt =>{
-        setWeapAndPanels({type: evt.label, base: weaponTable[evt.label]})
+        setWeapAndPanels({type: evt.label, base: weaponTable[mod][evt.label]})
         setImg(evt.image)
     }
     const pasteFromClipboard = ()=>{
@@ -24,8 +24,8 @@ function ArmoryMiddlePanel() {
                 clipText => {
                     const weap = JSON.parse(clipText)
                     console.log(weap)
-                    if(weap.type in weaponTable){
-                        setWeapAndPanels({...weap, base: weaponTable[weap.type]})
+                    if(weap.type in weaponTable[mod]){
+                        setWeapAndPanels({...weap, base: weaponTable[mod][weap.type]})
                     }
                     else{return}
                     for(let i=0;i<weapons.length; i++){
